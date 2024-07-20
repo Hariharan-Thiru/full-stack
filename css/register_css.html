@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: rgb(217, 253, 243);
+            width: 25%;
+            border-radius: 25px;
+            margin-left: 40% ;
+            margin-top: 10%;
+            position: absolute;
+            border: 2px solid rgb(0, 187, 255);
+        }
+        .btn{
+            background-color: rgb(254, 52, 30);
+            color: whitesmoke;
+            width: 60px;
+            height: 30px;
+            border-radius: 20px;
+            font-size: 15px;
+            border:  none;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color: rgb(84, 250, 13);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <table width="20%" align="center">
+            <th colspan="2" align="center"><h1>Registration Page</h1></th>
+            <tr>
+        <td>Name</td>
+        <td><input type="text" placeholder="enter the name" required></td>
+            </tr>
+        <tr>
+        <td>College</td>
+        <td><input type="text" placeholder="enter the college name" required></td>
+        </tr>
+        <tr>
+        <td>Department</td>
+        <td><input type="text" placeholder="enter the department" required></td>
+        </tr>
+        <tr>
+        <td>Gender</td>
+        <td><input type="radio" name="gender" id:"" required> Male <input type="radio" name="gender" id:"" required> Female</td>
+        </tr>
+        <tr>
+        <td>DOB</td>
+        <td><input type="date" placeholder="" required></td>
+        </tr>
+        <tr>
+        <td>Email</td>
+        <td><input type="text" placeholder="enter the Email" required></td>
+        </tr>
+        <tr>
+        <td>Password</td>
+        <td><input type="password" placeholder="enter the password" required></td>
+        </tr>
+        <tr>
+        <td>Skills</td>
+        <td><input type="checkbox" name="gender" id:"" required> C <input type="checkbox" name="gender" id:"" required> C++<input type="checkbox" name="gender" id:"" required>JAVA</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td><select><option>gobi</option><option>erode</option><option>tirupur</option></select></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><textarea rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <center><td><button type="submit" class="btn">Submit</button></td></center>
+        </tr>
+        </table></div>
+</body>
+</html>
