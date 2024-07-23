@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Function JS</title>
+    <script>
+        function myFunction(){
+            document.write("<b>Example for JS Function");
+        }
+        function add(a,b){
+            let sum=a+b;
+            document.write("<b>ADD : "+sum+"</b>");
+        }
+        function sub(a,b){
+            let min=a-b;
+            document.write("<b>SUB : "+min+"</b>");
+        }
+        function mul(a,b){
+            let into=a*b;
+            document.write("<b>MUL : "+into+"</b>");
+        }
+        function div(a,b){
+            let dif=a/b;
+            document.write("<b>DIV : "+ dif +"</b>");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myFunction()">Click Me</button>
+    <br><br>
+    <button onclick="add(10,20)">Addition</button>
+    <br><br>
+    <button onclick="sub(30,22)">Subtraction</button>
+    <br><br>
+    <button onclick="mul(10,5)">Multiplication</button>
+    <br><br>
+    <button onclick="div(100,20)">Division</button>
+</body>
+</html>
