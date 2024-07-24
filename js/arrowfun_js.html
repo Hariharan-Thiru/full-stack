@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sum=() => 10 + 20;
+        document.write("<br>Addition : "+sum());
+
+        const sub=() => 10 - 20;
+        document.write("<br><br>Subtraction : "+sub());
+
+        const mul=() => {return 10 * 20;}
+        document.write("<br><br>Multiplication : "+mul());
+
+        const div=() => {return 10 / 20;}
+        document.write("<br><br>Division : "+div());
+
+        const big=(x,y)=>{
+            if(x=y)
+            return x;
+            else
+            return y;
+        };
+        document.write("<br><br>Bigg : "+big(10,30));
+
+        const fact=(x)=>{
+            let result=1;
+            for(let i=1;i<=x;i++){
+                result*=i;
+            }
+            return result;
+        };   
+        document.write("<br><br>Factorial : "+fact(5));
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function arr(){
+            let skills=new Array("C","C++","Java");
+            document.write("<br>Array Elements : "+skills);
+            document.write("<br><br>Array Length : "+skills.length);
+            document.write("<br><br>First element : "+skills[0]);
+            document.write("<br><br>Last Element : "+skills[skills.length-1]);
+            skills.push("python");
+            document.write("<br><br>Array Elements : "+skills);
+            skills.pop();
+            document.write("<br><br>Array Elements : "+skills);
+            document.write("<br><br>Array Elements : ");
+            for(let i=0;i<skills.length;i++){
+                document.write("<br><br>"+skills[i]);
+            }
+        }
+    </script>
+</head>
+<body onload="arr()">
+    
+</body>
+</html>
