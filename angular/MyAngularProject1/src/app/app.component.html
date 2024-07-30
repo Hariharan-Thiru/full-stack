@@ -1,0 +1,25 @@
+<h1>Welcome to Angular</h1>
+<br>
+
+<b>
+  My Name : {{name}}<br>
+  My Age : {{age}}<br>
+  Email : <input type="text" value="{{email}}"/>
+<br>
+Addition:{{getAddition(10,20)}}
+</b>
+<!--
+<app-child></app-child> -->
+<font [color]="txtColor">
+<h1>Property Binding Example</h1>
+My name : <input type="text" [value]="name"/><br>
+My age : <input type="text" [value]="age"/><br>
+My email : <input type="text" [value]="email"/><br>
+Addition :<input type="text" [value]="getAddition(10,20)"/>
+</font>
+
+<h1>Event Binding Example</h1>
+<br>
+<button  (click)="changeName()">Change Name</button>
+<button  (click)="changeAge()">Change Age</button>
+<button  (click)="changeEmail()">Change Email</button>
