@@ -1,25 +1,74 @@
-<h1>Welcome to Angular</h1>
-<br>
-
-<b>
-  My Name : {{name}}<br>
-  My Age : {{age}}<br>
-  Email : <input type="text" value="{{email}}"/>
-<br>
-Addition:{{getAddition(10,20)}}
-</b>
 <!--
-<app-child></app-child> -->
-<font [color]="txtColor">
-<h1>Property Binding Example</h1>
-My name : <input type="text" [value]="name"/><br>
-My age : <input type="text" [value]="age"/><br>
-My email : <input type="text" [value]="email"/><br>
-Addition :<input type="text" [value]="getAddition(10,20)"/>
-</font>
 
-<h1>Event Binding Example</h1>
+<h1>WELCOME TO ANGULAR</h1>
 <br>
-<button  (click)="changeName()">Change Name</button>
-<button  (click)="changeAge()">Change Age</button>
-<button  (click)="changeEmail()">Change Email</button>
+<h1>INTERPOLATION</h1>
+<b>
+  My Name: {{name}}
+  <br>
+  My Age:{{age}}
+  <br>
+  My Email:<input type="text" value="{{email}}">
+</b>
+<BR>
+  <h1>PROPERTY BINDING EXAMPLE</h1>
+<font [color]="txtcolor">
+  <b>
+  My Name: <input type="text" [value]="name">
+    <br>
+  My Age:<input type="text" [value]="age">
+  <br>
+  My Email:<input type="text" [value]="email">
+  <br><br>
+  <img [src]="imgsrc" width="150" height="150">
+</b>
+</font>
+<br><br>
+<button (click)="changeName()">Change Name</button>
+<br><br>
+<button (click)="changeage()">Change Age</button>
+<br><br>
+<button (click)="changemail()">Change Email</button>
+<br><br>
+<button (click)="changeimg()">Change Img</button>
+ <app-child></app-child>
+ <b>
+ <h1>TWO WAY DATA BINDING</h1>
+ Enter your First Name<input type="text" [{ngmodule}]="fname">
+ <b>WELCOME {{fname}}</b>
+</b> -->
+<!-- <h1>ANGULAR STRUCTURAL DIRECTIVES</h1>
+<button (click)="changeFlag()">changeFlag</button>
+<div *ngIf="flag" [ngStyle]="mystyle">
+   <ul>
+    <li *ngFor="let vec of vehicles" (click)="setselected(vec)">{{vec}}</li>
+   </ul>
+   <br>
+   <b [ngClass]="Myclass">You have selected:{{selectedvehicle}}</b>
+
+   <br>
+   <div [ngSwitch]="selectedvehicle">
+    <font color="red" *ngSwitchCase="'two'">Bike</font>
+    <font color="red" *ngSwitchCase="'three'">Auto</font>
+    <font color="red" *ngSwitchCase="'four'">Car</font>
+    <font color="red" *ngSwitchDefault>Invalid</font>
+    <br>
+    <button (click)="change()">Change Class</button>
+   </div>
+</div> -->
+
+<!-- <table align="center">
+  <tr>
+    <th><a routerLink="/Home">Home</a></th>
+    <th><a routerLink="/Contact">Contact</a></th>
+    <th><a routerLink="/About">About us</a></th>
+  </tr>
+</table>
+<br><div>
+  This is a place to load new Component
+  <router-outlet></router-outlet>
+</div> -->
+
+
+<h1>Addition : {{sum}}</h1>
+<app-child></app-child>
