@@ -5,10 +5,19 @@
 </div>
 <br>
 <div id="side1">
-  <div id="s1">
+
+  <form #myForm=""ngForm">
+
+  <div id="s1" class="form-group">
     <h3 style="padding-left: 70px;"><u>RESCUE FORM</u></h3><br>
       Client Id<br>
-      <input type="text" placeholder="1001">
+      <input type="text" placeholder="1001"
+      class="form-control"
+      name="volId"
+      #volId="ngModel" ngModel
+      required
+      pattern="[]"
+      />
       <br><br>
       Client Name<br>
       <input type="text" placeholder="Enter the Name">
@@ -22,6 +31,7 @@
         <button type="submit" id="btn" style="font-size: medium;">Edit Client</button>&nbsp;&nbsp;
         <button type="submit" id="btn" style="font-size: medium;">Delete</button>&nbsp;&nbsp;
         <button type="submit" id="btn" style="font-size: medium;">Save</button>&nbsp;&nbsp;
+      </form>
     </div>
   <div id="s2">
     <table>
