@@ -6,7 +6,7 @@
 <div id="side1">
   <div id="s1" class="form-group">
     <form #myForm="ngForm">
-      <h3 style="padding-left: 70px;"><u>RESCUE FORM</u></h3><br>Client Id<br>
+      <h3 style="padding-left: 40px;"><u>VOLUNTEER FORM</u></h3><br>Volunteer Id<br>
       <input type="text" placeholder="1001" class="form-control" name="volId" #volId="ngModel" ngModel required pattern="[0-9]+"/>
       <div *ngIf="volId.touched">
         <div *ngIf="volId.errors?.['required']">
@@ -16,21 +16,21 @@
             <b style="color: red;">Invalid volId.</b>
         </div>
     </div>
-      Client Name<br>
+      Volunteer Name<br>
       <input type="text" placeholder="Enter the Name" name="volName" #volName="ngModel" ngModel required/><br>
       <div *ngIf="volName.touched">
         <div *ngIf="volName.errors?.['required']">
             <b style="color: red;">Volunteer Name Required.</b>
         </div>
     </div>
-      Rescued Place<br>
+      Place<br>
       <input type="text" placeholder="Enter the Place" name="volPlace" #volPlace="ngModel" ngModel required/><br>
       <div *ngIf="volPlace.touched">
         <div *ngIf="volPlace.errors?.['required']">
             <b style="color: red;">Volunteer Place Required.</b>
         </div>
       </div>
-      Date<br>
+      DOB<br>
       <input type="date" id="dot">
       <br><br>
         <button class="btn btn-primary" (click)="savevol(myForm.value)">Save</button>&nbsp;&nbsp;
@@ -44,7 +44,7 @@
     </div>
   <div id="s2">
     <h3>{{result}}</h3>
-        <div style="width: 80%; padding-left: 90px;" *ngIf="flag" >
+        <div style="width: 80%; padding-left: 10px;" *ngIf="flag" >
             <table width="80%" align="center" class="table table-bordered">
                 <tr>
                     <th>CLI-ID</th>

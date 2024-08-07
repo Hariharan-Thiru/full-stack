@@ -1,0 +1,412 @@
+SQL> create table emp;
+create table emp
+               *
+ERROR at line 1:
+ORA-00906: missing left parenthesis
+
+
+SQL> create table emp(emp_id number(2),emp_name varchar(20),emp_salary number(5));
+
+Table created.
+
+SQL> insert into emp values(11,'Harry',30000);
+
+1 row created.
+
+SQL>  insert into emp values(12,'Kabi',20000);
+
+1 row created.
+
+SQL>  insert into emp values(11,'Gowtham',10000);
+
+1 row created.
+
+SQL>  insert into emp values(15,'Kirthi',50000);
+
+1 row created.
+
+SQL>  insert into emp values(14,'Hari',40000);
+
+1 row created.
+
+SQL> select * from emp
+  2
+SQL> select * from emp;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harry                     30000
+        12 Kabi                      20000
+        11 Gowtham                   10000
+        15 Kirthi                    50000
+        14 Hari                      40000
+
+SQL> select * frpm emp where emp_salary between 20000 and 60000;
+select * frpm emp where emp_salary between 20000 and 60000
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select * from emp where emp_salary between 20000 and 60000;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harry                     30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        14 Hari                      40000
+
+SQL> select * from emp where emp_salary not between 20000 and 60000;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Gowtham                   10000
+
+SQL> select * from emp where emp_salary > 30000;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        15 Kirthi                    50000
+        14 Hari                      40000
+
+SQL> select * from emp where emp_id=11;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harry                     30000
+        11 Gowtham                   10000
+
+SQL> desc emp;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_ID                                             NUMBER(2)
+ EMP_NAME                                           VARCHAR2(20)
+ EMP_SALARY                                         NUMBER(5)
+
+SQL> select distinct emp_id from emp;
+
+    EMP_ID
+----------
+        11
+        14
+        12
+        15
+
+SQL> update emp set emp_name='Harryhari' where emp_id=11;
+
+2 rows updated.
+
+SQL> select * from emp;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        11 Harryhari                 10000
+        15 Kirthi                    50000
+        14 Hari                      40000
+
+SQL> delete from emp where emp_salary=10000;
+
+1 row deleted.
+
+SQL> select * from emp;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        14 Hari                      40000
+
+SQL> select * from emp where emp_salary >= 30000 and emp_id in 14;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        14 Hari                      40000
+
+SQL> select * from emp where emp_salary >= 30000 or emp_id in 14;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        15 Kirthi                    50000
+        14 Hari                      40000
+
+SQL> select * from emp where emp_name like 'H%';
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        14 Hari                      40000
+
+SQL> select * from emp where emp_name not like 'H%';
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        12 Kabi                      20000
+        15 Kirthi                    50000
+
+SQL> select * from emp where emp_name not like '_a%';
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        15 Kirthi                    50000
+
+SQL> select * from emp where emp_name like '_a%';
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        14 Hari                      40000
+
+SQL> select * from emp where emp_name <> 50000;
+select * from emp where emp_name <> 50000
+                        *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> select * from emp where emp_name!=50000;
+select * from emp where emp_name!=50000
+                        *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> select * from emp where emp_salary<>50000;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        14 Hari                      40000
+
+SQL> select * from emp where emp_name like '%y';
+
+no rows selected
+
+SQL> select * from emp where emp_name like '%i';
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        14 Hari                      40000
+
+SQL> select * from emp where emp_name like '%h_';
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        15 Kirthi                    50000
+
+SQL> insert into emp (emp_id,emp_salary) values (19,3000)
+  2
+SQL> insert into emp (emp_id,emp_salary) values (19,3000);
+
+1 row created.
+
+SQL> select * from emp;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        14 Hari                      40000
+        19                            3000
+
+SQL> select * from emp where emp_name is null;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        19                            3000
+
+SQL> select * from emp where emp_name is not null;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        14 Hari                      40000
+
+SQL> select * from emp order by emp_id asc;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        14 Hari                      40000
+        15 Kirthi                    50000
+        19                            3000
+
+SQL> select * from emp order by emp_id desc;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        19                            3000
+        15 Kirthi                    50000
+        14 Hari                      40000
+        12 Kabi                      20000
+        11 Harryhari                 30000
+
+SQL> select * from emp order by emp_name asc;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        14 Hari                      40000
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        19                            3000
+
+SQL> alter table emp add doj data;
+alter table emp add doj data
+                        *
+ERROR at line 1:
+ORA-00902: invalid datatype
+
+
+SQL> alter table emp add doj date;
+
+Table altered.
+
+SQL> select * from emp;
+
+    EMP_ID EMP_NAME             EMP_SALARY DOJ
+---------- -------------------- ---------- ---------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        14 Hari                      40000
+        19                            3000
+
+SQL> update emp set doj=sysdate where emp_id=12;
+
+1 row updated.
+
+SQL> select * from emp;
+
+    EMP_ID EMP_NAME             EMP_SALARY DOJ
+---------- -------------------- ---------- ---------
+        11 Harryhari                 30000
+        12 Kabi                      20000 07-AUG-24
+        15 Kirthi                    50000
+        14 Hari                      40000
+        19                            3000
+
+SQL> update emp set doj='05-AUG-24' where emp_id=14,11;
+update emp set doj='05-AUG-24' where emp_id=14,11
+                                              *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update emp set doj='05-AUG-24' where emp_id=14;
+
+1 row updated.
+
+SQL> select * from emp;
+
+    EMP_ID EMP_NAME             EMP_SALARY DOJ
+---------- -------------------- ---------- ---------
+        11 Harryhari                 30000
+        12 Kabi                      20000 07-AUG-24
+        15 Kirthi                    50000
+        14 Hari                      40000 05-AUG-24
+        19                            3000
+
+SQL> alter table emp drop column doj;
+
+Table altered.
+
+SQL> select * from emp;
+
+    EMP_ID EMP_NAME             EMP_SALARY
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        14 Hari                      40000
+        19                            3000
+
+SQL> desc emp;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_ID                                             NUMBER(2)
+ EMP_NAME                                           VARCHAR2(20)
+ EMP_SALARY                                         NUMBER(5)
+
+SQL> alter table emp modify emp_salary(7);
+alter table emp modify emp_salary(7)
+                                 *
+ERROR at line 1:
+ORA-00902: invalid datatype
+
+
+SQL> alter table emp modify emp_salary number(7);
+
+Table altered.
+
+SQL> desc emp;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_ID                                             NUMBER(2)
+ EMP_NAME                                           VARCHAR2(20)
+ EMP_SALARY                                         NUMBER(7)
+
+SQL> alter table emp modify emp_salary(4);
+alter table emp modify emp_salary(4)
+                                 *
+ERROR at line 1:
+ORA-00902: invalid datatype
+
+
+SQL> alter table emp modify emp_salary number(4);
+alter table emp modify emp_salary number(4)
+                       *
+ERROR at line 1:
+ORA-01440: column to be modified must be empty to decrease precision or scale
+
+
+SQL> alter table emp rename column emp_salary to esal;
+
+Table altered.
+
+SQL> desc emp;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_ID                                             NUMBER(2)
+ EMP_NAME                                           VARCHAR2(20)
+ ESAL                                               NUMBER(7)
+
+SQL> rename emp to cli
+  2
+SQL> rename emp to cli;
+
+Table renamed.
+
+SQL> select * from cli;
+
+    EMP_ID EMP_NAME                   ESAL
+---------- -------------------- ----------
+        11 Harryhari                 30000
+        12 Kabi                      20000
+        15 Kirthi                    50000
+        14 Hari                      40000
+        19                            3000
+
+SQL> drop table cli;
+
+Table dropped.
+
+SQL> desc cli;
+ERROR:
+ORA-04043: object cli does not exist
+
+
+SQL>
